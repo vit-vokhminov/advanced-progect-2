@@ -1,0 +1,308 @@
+--force это принудительная установка пакета
+
+npm run build:prod
+npm run build:dev
+
+
+npm init -y
+npm i -D webpack@5.69.1 webpack-cli@4.10.0
+для запуска сборки, в терминале нужно написать webpack
+
+npm i -D html-webpack-plugin@5.5.0
+npm i -D typescript@4.5.5 ts-loader@9.2.6
+npm i -D ts-node@10.5.0 @types/node@17.0.21 @types/webpack@5.28.0
+npm i -D webpack-dev-server@4.7.4 @types/webpack-dev-server@4.7.2
+npm i react@17.0.2 react-dom@17.0.2
+npm i -D @types/react@17.0.39 @types/react-dom@17.0.11
+npm i -D sass-loader@12.6.0 sass@1.49.9 style-loader@3.3.1 css-loader@6.6.0
+npm i -D mini-css-extract-plugin@2.5.3
+npm i react-router-dom@6.2.1
+npm i -D @types/react-router-dom@5.3.3
+npm i -D @svgr/webpack@6.2.1
+npm i -D file-loader@6.2.0
+npm i react-i18next@11.15.5 i18next@21.6.11 --save
+npm i i18next-http-backend@1.3.2 i18next-browser-languagedetector@6.1.3 --save
+npm i -D @pmmmwh/react-refresh-webpack-plugin react-refresh
+
+if(isDev){
+	plugin.push(new ReactRefreshWebpackPlugin());
+	plugin.push(new webpack.HotModuleReplacementPlugin());
+}
+
+трабла с переводчиком
+
+
+npm i -D babel-loader@8.2.3 @babel/core@7.17.5
+npm i -D @babel/preset-env@7.16.11
+npm i -D babel-plugin-i18next-extract@0.8.3		// лучше его не использовать, сомнительный, его свойство есть в babel.config.json и в babelLoader плагин 'i18next-extract' наверно лучше удалить
+npm install eslint-plugin-i18next@latest --save-dev
+
+// настройки eslint
+// https://tokmakov.msk.ru/blog/item/713
+npm i -D eslint@8.10.0
+npm init @eslint/config
+	// To check syntax, find problems, and enforce code style
+	// JavaScript module (import/export)
+	// React
+	// TypeScript yes
+	// Browser
+	// Use a popular style quide
+	// - 
+	// JavaScript
+// Запуск EsLint на проверку: eslint "**/*.{ts,tsx}"
+
+
+// Настройка ESLint, Prettier
+https://maxpfrontend.ru/vebinary/nastroyka-eslint-prettier-pre-commit-hook-create-react-app-visual-studio-code/
+
+npm i -D stylelint@14.5.3 stylelint-config-standard-scss@3.0.0
+npm i -D eslint-plugin-i18next@next@5.1.2
+
+npm i -D jest@27.5.1
+npm i -D @types/jest@27.4.1
+npm i -D @babel/preset-typescript@7.16.7
+jest --init 	// содаём базовый конфигурационный файл
+	// добавить в package.json y
+	// исползую TS y 
+	// jsdom
+	// добавть отчеты n
+	// babel 
+	// очищать моки посли каждого теста y
+// запустить один конкретный файл на тестирование: npm run jest classNames.test.ts
+
+
+// посмотреть анализ бандла http://127.0.0.1:8888/
+// запускать просто npm start или npm run build:dev
+npm i -D webpack-bundle-analyzer@4.5.0
+npm i -D @types/webpack-bundle-analyzer@4.4.1
+
+
+// jest
+npm i -D @testing-library/react@12.1.3
+npm i -D @testing-library/jest-dom@5.16.2
+npm i -D @babel/preset-react@7.16.7
+// для распознования стилей
+npm i -D identity-obj-proxy@3.0.0
+// расширение jest чтобы тестировать асинхронные компоненты
+npm i -D regenerator-runtime@0.13.9
+
+// storybook
+npx sb init --builder webpack5
+npm i -D storybook-addon-react-router-v6
+
+// скриншотные тесты	https://loki.js.org/getting-started.html
+npm i -D loki@0.28.1
+npx loki init --config ./config/storybook   // --config указывается если конфиг storybook был перенесен
+npx loki test		// запуск тестов, предварительно запустив сторибук npm run storybook
+npx loki approve 	// скрипт для одобрения скриншотного теста
+
+// сделать сравнение скриншотов на основании storybook сборки
+npm run storybook:build
+npm i -D reg-cli@0.17.6		// для удобного сравнения скриншотных тестов
+npm i -D reg-cli
+
+// запуск скриншотных тестов
+- запустить storybook
+- npm run test:ui
+- npm run test:ui:json
+- npm run test:ui:html
+  или
+- запустить storybook
+- npm run test:ui
+- test:ui:report
+
+
+// плагин контролирует необходимость обёртки в useCallback
+npm i -D eslint-plugin-react-hooks 
+
+npm install @reduxjs/toolkit@1.8.0 react-redux@7.2.6
+
+npm install -g json-server
+npm i -D json-server
+// Start JSON Server
+json-server --watch ./json-server/db.json --port 8000
+
+
+// husky предназначен для прекоммит хуков гита
+npm i -D husky
+npx husky-init
+
+npm i axios
+npm i -D concurrently
+
+
+npm install copy-webpack-plugin --save-dev
+
+// разбирался с концепцией virtualized потом выпилил т.к. есть https://github.com/bvaughn/react-window
+npm i -D react-virtualized
+npm i -D @types/react-virtualized
+
+npm install react-virtuoso
+npm i styled-components
+
+
+
+//=================================================================
+
+// свой eslint плагин
+// https://www.npmjs.com/package/generator-eslint
+// пакет для генерации заготовки для плагинов
+// дока https://eslint.org/docs/latest/extend/custom-rules
+
+https://astexplorer.net/ // абстракное синтакическое дерево
+
+создать шаблон плагина
+yo eslint:rule
+
+
+
+опубликовать npm publish
+
+//=================================================================
+
+
+
+// устаналиваю плагин для проверки относительных путей
+npm i -D eslint-plugin-vit-vokhminov-fsd
+// синтаксическое дерево
+https://astexplorer.net/
+https://habr.com/ru/company/sovcombank_technologies/blog/686662/
+
+
+// хеадлес библиотеки
+https://headlessui.com/react/transition
+https://react-spectrum.adobe.com/react-aria/useFocus.html
+https://floating-ui.com/
+https://bundlephobia.com/
+
+npm install @headlessui/react
+
+
+// репортер для тестов
+npm install jest-html-reporters --save-dev
+
+
+npm install @testing-library/user-event --save-dev
+
+// обновить до последней версии
+npm i react@latest
+
+npm i react@18.2.0 react-dom@18.2.0
+npm i @types/react@18.0.17 @types/react-dom@18.0.6
+
+
+// https://github.com/nutboltu/storybook-addon-mock/blob/2.4.1/README.md
+npm i -D storybook-addon-mock
+npm i -D @types/storybook-addon-mock
+
+// плагин для проверки кольцевых зависимостей
+npm i -D circular-dependency-plugin
+npm i -D @types/circular-dependency-plugin
+
+
+npm i -D @babel/plugin-transform-runtime@7.18.10
+npm i -D @babel/plugin-transform-typescript@7.18.12
+npm i -D fork-ts-checker-webpack-plugin
+
+// инфа по написания babel плагинов
+https://babeljs.io/docs/plugins#plugin-development
+
+
+// определение через userAgent мобилки или десктопа: BrowserView, MobileView
+npm i react-device-detect@2.2.2
+
+// библиотека для перетаскивания, свайпов и тд
+npm i @react-spring/web@9.5.2		// библиотека для анимаций
+npm i @use-gesture/react@10.2.19		// библиотека для всяких драг состояний
+
+
+// предназначена для изменения TS кода	https://ts-morph.com/
+// можно глобально рефакторить проект, например scripts/updateImports.ts проставляет алиасы @/ в импорты
+npm i -D ts-morph@16.0.0
+// запуск скрипта ts-node .\scripts\updateImports.ts
+
+
+// можно указать какие подифилы добавлять при сборке проекта для поддержки разных/старых браузеров
+// https://github.com/browserslist/browserslist
+файл .browserslistrc
+
+
+// https://vitejs.dev/
+npm i -D @vitejs/plugin-react@2.1.0 vite@3.1.0
+npm i -D vite-plugin-svgr@2.2.1
+
+
+
+// запуск скриптов в папке scripts
+ts-node ./scripts/refactoring/createPublicApiForSharedUi.ts
+
+
+
+// плагин на не используемые импорты
+npm i -D eslint-plugin-unused-imports@2.0.0
+
+// рекомендация, настроить порядок импортов
+// https://www.npmjs.com/package/eslint-plugin-import
+npm i -D eslint-plugin-import
+
+
+// переключать цвет заднего фона в storybook
+// https://storybook.js.org/addons/@dhruvkb/storybook-addon-themes
+npm i -D storybook-addon-themes@6.1.0
+
+
+// обновим testing-library после миграции на react 18
+npm i -D @testing-library/react@13.4.0
+
+
+// https://www.npmjs.com/package/lint-staged
+// библиотека позволяет прогонять линтером только те файлы, которые были изменены
+// используется совместно м husky
+npm i -D lint-staged@13.0.3
+
+
+
+// e2e 
+// https://docs.cypress.io/guides/getting-started/installing-cypress#What-you-ll-learn
+npm i -D cypress
+npm run test:e2e
+
+
+// eslint это статический анализ кода на соответствие каким то правилам
+// prettier отвечает за форматирование кода
+npm i -D --save-exact prettier@2.7.1
+// для интеграции prettier с eslint
+npm install --save-dev eslint-config-prettier
+
+// https://prettier.io/docs/en/options.html
+{
+    "singleQuote": true,	// Одинарные кавычки вместо двойных.
+    "jsxSingleQuote": true,	// Одинарные кавычки вместо двойных кавычек в JSX.
+    "bracketSameLine": false,	// Закрывающий тег > поместит на новой строке
+    "arrowParens": "always",	// Аргументы в стрелочных функция обернёт в ()
+    "tabWidth": 4,	// Количество пробелов для каждого отступа
+    "semi": true,	// Точки с запятой в конце операторов.
+    "useTabs": false,	// Делайте отступы в строках с помощью табуляции вместо пробелов.
+    "trailingComma": "none",	// Конечные запятые везде, где это возможно
+    "bracketSpacing": true,		// Пробелы в { }
+    "printWidth": 140,	// длина строки
+}
+// в eslint добавить правило 'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
+// если пропсов будет больше 4, тогда делать перенос пропсов на новую строку
+
+
+ПОЛЕЗНОЕ:
+создать лоадер: https://loading.io/css/
+
+ВОПРОСЫ:
+1. (2-17) Почему когда подключили babelLoader указали js|jsx|tsx файлы, а ts файлы не указывали?
+2. Как настроить npm i -D storybook-addon-react-router-v6
+
+
+ТЕРМИНЫ:
+регрессионное тестирование - это когда мы убеждаемся что новый функционал не сломал старый 
+
+CI pipeline. Автоматизация прогона тестов (gitHub Actions)
+gitHub Actions .github\workflows\main.yml
+loki - скриншотные тесты
+husky - прекомит хук, запуск проверок после коммита

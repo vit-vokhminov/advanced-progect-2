@@ -1,7 +1,6 @@
-import path from 'path';
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
-import { buildLoader } from './buildLoader';
+import { buildLoaders } from './buildLoaders';
 import { buildPlugins } from './buildPlugins';
 import { buildResolvers } from './buildResolvers';
 import { buildDevServer } from './buildDevserver';
@@ -18,14 +17,15 @@ export function buildWebpackConfig(
             filename: '[name].[contenthash].js',
             path: paths.build,
             clean: true,
+            publicPath: '/',
         },
         plugins: buildPlugins(options),
         module: {
-            rules: buildLoader(),
+            rules: buildLoaders(options),
         },
-        resolve: buildResolvers(),
-        // inline-source-map покажет файл где в коде произошла ошибка
-        devtool: isDev ? 'inline-source-map' : undefined, // в prod сборке не будет комментариев sourceMap
+        resolve: buildResolvers(options),
+        // eval-cheap-module-source-map покажет файл где в коде произошла ошибка
+        devtool: isDev ? 'eval-cheap-module-source-map' : undefined, // в prod сборке не будет комментариев sourceMap
         devServer: isDev ? buildDevServer(options) : undefined, // в prod не будет запускаться devServer
     };
 }

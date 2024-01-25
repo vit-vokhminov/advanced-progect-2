@@ -26,8 +26,8 @@ export const saveJsonSettings = createAsyncThunk<
                     ...currentSettings,
                     ...newJsonSettings,
                 },
-            })
-        ).unwrap(); // unwrap получить результат из промиса
+            }),
+        ).unwrap();
 
         if (!response.jsonSettings) {
             return rejectWithValue('');

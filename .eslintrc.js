@@ -102,6 +102,7 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         // запретить нижние подчёркивания
         'no-underscore-dangle': 'off',
+        'react/jsx-wrap-multilines': 'off',
         'max-len': [
             'error',
             {

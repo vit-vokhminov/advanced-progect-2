@@ -8,7 +8,6 @@ import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { UserRole } from '@/entities/User';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
-import { AppRoutesProps } from '@/shared/types/router';
 import {
     AppRoutes,
     getRouteAbout,
@@ -20,12 +19,19 @@ import {
     getRouteArticles,
     getRouteMain,
     getRouteProfile,
+    getRouteSettings,
 } from '@/shared/const/router';
+import { AppRoutesProps } from '@/shared/types/router';
+import { SettingsPage } from '@/pages/SettingsPage';
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
         path: getRouteMain(),
         element: <MainPage />,
+    },
+    [AppRoutes.SETTINGS]: {
+        path: getRouteSettings(),
+        element: <SettingsPage />,
     },
     [AppRoutes.ABOUT]: {
         path: getRouteAbout(),
@@ -66,7 +72,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         path: getRouteForbidden(),
         element: <ForbiddenPage />,
     },
-    // lost
+    // last
     [AppRoutes.NOT_FOUND]: {
         path: '*',
         element: <NotFoundPage />,

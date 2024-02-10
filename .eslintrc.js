@@ -137,6 +137,7 @@ module.exports = {
             },
         ],
         'import/order': 'off',
+        'react/jsx-curly-newline': 'off',
         'object-curly-newline': 'off',
         'arrow-body-style': 'off',
         'react/jsx-no-useless-fragment': 'off',

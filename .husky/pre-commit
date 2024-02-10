@@ -3,7 +3,7 @@
 
 #библиотека позволяет прогонять линтером только те файлы, которые были изменены
 # в package.json параметр lint-staged
-npx lint-staged
+#npx lint-staged
 
 #npm run build:prod
 #npm run lint:ts

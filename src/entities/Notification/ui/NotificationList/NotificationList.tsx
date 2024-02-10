@@ -1,6 +1,6 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { useNotifications } from '../../api/notificationApi';
 import cls from './NotificationList.module.scss';
@@ -13,7 +13,6 @@ interface NotificationListProps {
 export const NotificationList = memo((props: NotificationListProps) => {
     const { className } = props;
     const { data, isLoading } = useNotifications(null, {
-        // лонг пуллинг
         pollingInterval: 10000,
     });
 
@@ -37,7 +36,7 @@ export const NotificationList = memo((props: NotificationListProps) => {
             max
             className={classNames(cls.NotificationList, {}, [className])}
         >
-            {data?.map(item => (
+            {data?.map((item) => (
                 <NotificationItem key={item.id} item={item} />
             ))}
         </VStack>

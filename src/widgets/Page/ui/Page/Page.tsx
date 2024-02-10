@@ -27,12 +27,16 @@ export const Page = memo((props: PageProps) => {
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
     const scrollPosition = useSelector((state: StateSchema) =>
-        getUIScrollByPath(state, pathname),
+        getUIScrollByPath(state, pathname)
     );
 
     useInfiniteScroll({
         triggerRef,
-        wrapperRef,
+        wrapperRef: toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => undefined,
+            off: () => wrapperRef,
+        }),
         callback: onScrollEnd,
     });
 
@@ -45,7 +49,7 @@ export const Page = memo((props: PageProps) => {
             uiActions.setScrollPosition({
                 position: e.currentTarget.scrollTop,
                 path: pathname,
-            }),
+            })
         );
     }, 500);
 
@@ -59,7 +63,7 @@ export const Page = memo((props: PageProps) => {
                     off: () => cls.Page,
                 }),
                 {},
-                [className],
+                [className]
             )}
             onScroll={onScroll}
             id={PAGE_ID}

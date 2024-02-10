@@ -65,7 +65,7 @@ export const Normal = Template.bind({});
 Normal.args = {};
 
 Normal.decorators = [
-    ThemeDecorator(Theme.NORMAL),
+    ThemeDecorator(Theme.DARK),
     StoreDecorator({
         articleDetails: {
             data: article,

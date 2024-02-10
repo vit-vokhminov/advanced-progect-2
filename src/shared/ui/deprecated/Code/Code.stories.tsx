@@ -30,4 +30,4 @@ Normal.args = {
         '\n' +
         'export const Normal = Template.bind({});',
 };
-Normal.decorators = [ThemeDecorator(Theme.NORMAL)];
+Normal.decorators = [ThemeDecorator(Theme.DARK)];

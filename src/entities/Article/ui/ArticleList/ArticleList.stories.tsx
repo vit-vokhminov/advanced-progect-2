@@ -99,7 +99,7 @@ LoadingBig.args = {
     isLoading: true,
     view: ArticleView.BIG,
 };
-LoadingBig.decorators = [ThemeDecorator(Theme.NORMAL)];
+LoadingBig.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const LoadingSmall = Template.bind({});
 LoadingSmall.args = {
@@ -107,7 +107,7 @@ LoadingSmall.args = {
     isLoading: true,
     view: ArticleView.SMALL,
 };
-LoadingSmall.decorators = [ThemeDecorator(Theme.NORMAL)];
+LoadingSmall.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const ListSmall = Template.bind({});
 ListSmall.args = {
@@ -118,7 +118,7 @@ ListSmall.args = {
     isLoading: false,
     view: ArticleView.SMALL,
 };
-ListSmall.decorators = [ThemeDecorator(Theme.NORMAL)];
+ListSmall.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const ListBig = Template.bind({});
 ListBig.args = {
@@ -129,4 +129,4 @@ ListBig.args = {
     isLoading: false,
     view: ArticleView.BIG,
 };
-ListBig.decorators = [ThemeDecorator(Theme.NORMAL)];
+ListBig.decorators = [ThemeDecorator(Theme.DARK)];

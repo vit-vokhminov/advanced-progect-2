@@ -19,4 +19,4 @@ export const Normal = Template.bind({});
 Normal.args = {
     children: <Text title='test' text='text text' />,
 };
-Normal.decorators = [ThemeDecorator(Theme.NORMAL)];
+Normal.decorators = [ThemeDecorator(Theme.DARK)];

@@ -20,11 +20,11 @@ Primary.args = {
     size: 150,
     src: AvatarImg,
 };
-Primary.decorators = [ThemeDecorator(Theme.NORMAL)];
+Primary.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Small = Template.bind({});
 Small.args = {
     size: 50,
     src: AvatarImg,
 };
-Small.decorators = [ThemeDecorator(Theme.NORMAL)];
+Small.decorators = [ThemeDecorator(Theme.DARK)];

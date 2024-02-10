@@ -22,7 +22,7 @@ const Template: ComponentStory<typeof ProfilePage> = args => (
 export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [
-    ThemeDecorator(Theme.NORMAL),
+    ThemeDecorator(Theme.DARK),
     StoreDecorator({
         profile: {
             form: {

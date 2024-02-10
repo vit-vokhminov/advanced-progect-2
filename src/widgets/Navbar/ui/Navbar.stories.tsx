@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof Navbar> = args => <Navbar {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [ThemeDecorator(Theme.NORMAL), StoreDecorator({})];
+Normal.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 
 export const Dark = Template.bind({});
 Dark.args = {};
@@ -27,7 +27,7 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 export const AuthNavbar = Template.bind({});
 AuthNavbar.args = {};
 AuthNavbar.decorators = [
-    ThemeDecorator(Theme.NORMAL),
+    ThemeDecorator(Theme.DARK),
     StoreDecorator({
         user: { authData: {} },
     }),

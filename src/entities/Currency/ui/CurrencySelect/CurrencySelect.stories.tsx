@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof CurrencySelect> = args => (
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [ThemeDecorator(Theme.NORMAL)];
+Primary.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Dark = Template.bind({});
 Dark.args = {};

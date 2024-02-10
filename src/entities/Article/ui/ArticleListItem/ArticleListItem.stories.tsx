@@ -98,11 +98,11 @@ Big.args = {
     view: ArticleView.BIG,
     article,
 };
-Big.decorators = [ThemeDecorator(Theme.NORMAL)];
+Big.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Small = Template.bind({});
 Small.args = {
     view: ArticleView.SMALL,
     article,
 };
-Big.decorators = [ThemeDecorator(Theme.NORMAL)];
+Big.decorators = [ThemeDecorator(Theme.DARK)];

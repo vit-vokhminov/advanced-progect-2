@@ -17,7 +17,7 @@ export const parameters = {
     themes: {
         default: 'normal',
         list: [
-            { name: 'normal', class: Theme.NORMAL, color: '#ffffff' },
+            { name: 'light', class: Theme.LIGHT, color: '#ffffff' },
             { name: 'dark', class: Theme.DARK, color: '#000000' },
             { name: 'orange', class: Theme.ORANGE, color: '#ffb005' },
         ],
@@ -25,6 +25,6 @@ export const parameters = {
 };
 
 addDecorator(StyleDecorator);
-addDecorator(ThemeDecorator(Theme.NORMAL));
+addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouterDecorator);
 addDecorator(SuspenseDecorator);

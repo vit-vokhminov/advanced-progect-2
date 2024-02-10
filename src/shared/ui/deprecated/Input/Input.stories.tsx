@@ -19,7 +19,7 @@ Primary.args = {
     placeholder: 'Type text',
     value: '123123',
 };
-Primary.decorators = [ThemeDecorator(Theme.NORMAL)];
+Primary.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Dark = Template.bind({});
 Dark.args = {

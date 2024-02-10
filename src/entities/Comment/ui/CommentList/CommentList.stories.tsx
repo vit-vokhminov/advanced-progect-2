@@ -31,11 +31,11 @@ Normal.args = {
         },
     ],
 };
-Normal.decorators = [ThemeDecorator(Theme.NORMAL)];
+Normal.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Loading = Template.bind({});
 Loading.args = {
     comments: [],
     isLoading: true,
 };
-Loading.decorators = [ThemeDecorator(Theme.NORMAL)];
+Loading.decorators = [ThemeDecorator(Theme.DARK)];

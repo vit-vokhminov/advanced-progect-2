@@ -20,7 +20,7 @@ const Template: ComponentStory<typeof LoginForm> = args => (
 export const Primary = Template.bind({});
 Primary.args = {};
 Primary.decorators = [
-    ThemeDecorator(Theme.NORMAL),
+    ThemeDecorator(Theme.DARK),
     StoreDecorator({
         loginForm: { username: '123', password: 'asd' },
     }),
@@ -29,7 +29,7 @@ Primary.decorators = [
 export const withError = Template.bind({});
 withError.args = {};
 withError.decorators = [
-    ThemeDecorator(Theme.NORMAL),
+    ThemeDecorator(Theme.DARK),
     StoreDecorator({
         loginForm: { username: '123', password: 'asd', error: 'ERROR' },
     }),
@@ -38,7 +38,7 @@ withError.decorators = [
 export const Loading = Template.bind({});
 Loading.args = {};
 Loading.decorators = [
-    ThemeDecorator(Theme.NORMAL),
+    ThemeDecorator(Theme.DARK),
     StoreDecorator({
         loginForm: { isLoading: true },
     }),

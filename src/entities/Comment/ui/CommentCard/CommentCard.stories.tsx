@@ -24,7 +24,7 @@ Normal.args = {
         user: { id: '1', username: 'Vasya' },
     },
 };
-Normal.decorators = [ThemeDecorator(Theme.NORMAL)];
+Normal.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Loading = Template.bind({});
 Loading.args = {
@@ -35,4 +35,4 @@ Loading.args = {
     },
     isLoading: true,
 };
-Loading.decorators = [ThemeDecorator(Theme.NORMAL)];
+Loading.decorators = [ThemeDecorator(Theme.DARK)];

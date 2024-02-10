@@ -22,7 +22,7 @@ Primary.args = {
         { value: '1234', content: 'Второй пункт' },
     ],
 };
-Primary.decorators = [ThemeDecorator(Theme.NORMAL)];
+Primary.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Dark = Template.bind({});
 Dark.args = {

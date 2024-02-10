@@ -22,7 +22,7 @@ Normal.args = {
     width: '100%',
     height: 200,
 };
-Normal.decorators = [ThemeDecorator(Theme.NORMAL)];
+Normal.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Circle = Template.bind({});
 Circle.args = {
@@ -30,7 +30,7 @@ Circle.args = {
     width: 100,
     height: 100,
 };
-Circle.decorators = [ThemeDecorator(Theme.NORMAL)];
+Circle.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const NormalDark = Template.bind({});
 NormalDark.args = {

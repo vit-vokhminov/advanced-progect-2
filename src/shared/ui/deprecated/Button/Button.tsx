@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-import s from './Button.module.scss';
+import cls from './Button.module.scss';
 
 export enum ButtonTheme {
     CLEAR = 'clear',
@@ -19,22 +19,29 @@ export enum ButtonSize {
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
-
-    // Тема кнопки. Отвечает за визуал (в рамке, без стилей, противоположный теме приложения цвет и тд)
+    /**
+     * Тема кнопки. Отвечает за визуал (в рамке, без стилей, противоположный теме приложения цвет и тд)
+     */
     theme?: ButtonTheme;
-
-    // Флаг, делающий кнопку квадратной
+    /**
+     * Флаг, делающий кнопку квадратной
+     */
     square?: boolean;
-
-    // Размер кнопки в соответствии с дизайн системой
+    /**
+     * Размер кнопки в соответствии с дизайн системой
+     */
     size?: ButtonSize;
-
-    // Флаг, отвечающий за работу кнопки
+    /**
+     * Флаг, отвечающий за работу кнопки
+     */
     disabled?: boolean;
-
-    // Содержимое кнопки
+    /**
+     * Содержимое кнопки
+     */
     children?: ReactNode;
-    // Увеличивает кнопку на всю свободную ширину
+    /**
+     * Увеличивает кнопку на всю свободную ширину
+     */
     fullWidth?: boolean;
 }
 
@@ -55,21 +62,17 @@ export const Button = memo((props: ButtonProps) => {
     } = props;
 
     const mods: Mods = {
-        [s.square]: square,
-        [s.disabled]: disabled,
-        [s.fullWidth]: fullWidth,
-        [s.disabled]: disabled,
-        [s.fullWidth]: fullWidth,
+        [cls[theme]]: true,
+        [cls.square]: square,
+        [cls[size]]: true,
+        [cls.disabled]: disabled,
+        [cls.fullWidth]: fullWidth,
     };
 
     return (
         <button
             type='button'
-            className={classNames(s.Button, mods, [
-                className,
-                s[theme],
-                s[size],
-            ])}
+            className={classNames(cls.Button, mods, [className])}
             disabled={disabled}
             {...otherProps}
         >

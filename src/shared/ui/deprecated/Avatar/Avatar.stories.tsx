@@ -2,8 +2,6 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Avatar } from './Avatar';
 import AvatarImg from './storybook.jpg';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'shared/Avatar',
@@ -13,18 +11,16 @@ export default {
     },
 } as ComponentMeta<typeof Avatar>;
 
-const Template: ComponentStory<typeof Avatar> = args => <Avatar {...args} />;
+const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
     size: 150,
     src: AvatarImg,
 };
-Primary.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Small = Template.bind({});
 Small.args = {
     size: 50,
     src: AvatarImg,
 };
-Small.decorators = [ThemeDecorator(Theme.DARK)];

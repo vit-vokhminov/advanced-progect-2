@@ -1,10 +1,10 @@
 import { CSSProperties, useMemo } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-import { AppImage } from '../AppImage';
+import cls from './Avatar.module.scss';
+import { AppImage } from '../../redesigned/AppImage';
 import UserIcon from '../../../assets/icons/user-filled.svg';
 import { Icon } from '../Icon';
 import { Skeleton } from '../Skeleton';
-import cls from './Avatar.module.scss';
 
 interface AvatarProps {
     className?: string;
@@ -14,6 +14,10 @@ interface AvatarProps {
     fallbackInverted?: boolean;
 }
 
+/**
+ * Устарел, используем новые компоненты из папки redesigned
+ * @deprecated
+ */
 export const Avatar = ({
     className,
     src,

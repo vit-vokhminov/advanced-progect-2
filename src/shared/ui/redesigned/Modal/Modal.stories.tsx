@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Modal } from './Modal';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Modal } from './Modal';
 import { Theme } from '@/shared/const/theme';
 
 export default {
@@ -12,7 +12,7 @@ export default {
     },
 } as ComponentMeta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = args => <Modal {...args} />;
+const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -20,7 +20,6 @@ Primary.args = {
     children:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.\n ',
 };
-Primary.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Dark = Template.bind({});
 Dark.args = {

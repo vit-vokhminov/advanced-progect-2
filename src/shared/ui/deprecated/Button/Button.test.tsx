@@ -7,6 +7,7 @@ describe('Button', () => {
         // получить элемент по тексту 'TEST'
         expect(screen.getByText('TEST')).toBeInTheDocument();
     });
+
     test('Передача класса в кнопку', () => {
         render(<Button theme={ButtonTheme.CLEAR}>TEST</Button>);
         // получить элемент по тексту 'TEST'

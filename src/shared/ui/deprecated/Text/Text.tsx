@@ -1,5 +1,5 @@
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
 
 export enum TextTheme {
@@ -63,7 +63,7 @@ export const Text = memo((props: TextProps) => {
     };
 
     return (
-        <div className={classNames('', mods, [className])}>
+        <div className={classNames(cls.Text, mods, [className])}>
             {title && (
                 <HeaderTag
                     className={cls.title}

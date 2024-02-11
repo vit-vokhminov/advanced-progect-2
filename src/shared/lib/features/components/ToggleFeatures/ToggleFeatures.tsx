@@ -5,7 +5,7 @@ import { getFeatureFlag } from '../../lib/setGetFeatures';
 interface ToggleFeaturesProps {
     feature: keyof FeatureFlags;
     on: ReactElement;
-    off: ReactElement;
+    off: ReactElement | null;
 }
 
 export const ToggleFeatures = (props: ToggleFeaturesProps) => {

@@ -18,8 +18,8 @@ npm run start:dev - запуск сервера + frontend проекта в dev
 - `npm run lint:ts:fix` - Исправление ts файлов линтером
 - `npm run lint:scss` - Проверка scss файлов style линтером
 - `npm run lint:scss:fix` - Исправление scss файлов style линтером
-- `npm run test:unit` - Хапуск unit тестов с jest
-- `npm run test:ui` - Хапуск скриншотных тестов с loki
+- `npm run test:unit` - Запуск unit тестов с jest
+- `npm run test:ui` - Запуск скриншотных тестов с loki
 - `npm run test:ui:ok` - Подтверждение новых скриншотов
 - `npm run test:ui:ci` - Запуск скриншотных тестов в CI
 - `npm run test:ui:report` - Генерация полного отчета для скриншотных тестов
@@ -68,7 +68,7 @@ npm run start:dev - запуск сервера + frontend проекта в dev
 В проекте используется eslint для проверки typescript кода и stylelint для проверки файлов со стилями.
 
 Также для строгого контроля главных архитектурных принципов
-используется собственный eslint plugin *eslint-plugin-ulbi-tv-plugin*,
+используется собственный eslint plugin *eslint-plugin-vit-vokhminov-fsd*,
 который содержит 3 правила
 1) path-checker - запрещает использовать абсолютные импорты в рамках одного модуля
 2) layer-imports - проверяет корректность использования слоев с точки зрения FSD

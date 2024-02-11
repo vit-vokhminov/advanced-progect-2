@@ -1,14 +1,15 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input } from '@/shared/ui/deprecated/Input';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import {
     DynamicModuleLoader,
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import {
     addCommentFormActions,
     addCommentFormReducer,
@@ -17,7 +18,6 @@ import {
     getAddCommentFormError,
     getAddCommentFormText,
 } from '../../model/selectors/addCommentFormSelectors';
-import { HStack } from '@/shared/ui/deprecated/Stack';
 import cls from './AddCommentForm.module.scss';
 
 export interface AddCommentFormProps {
@@ -57,10 +57,10 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                 className={classNames(cls.AddCommentForm, {}, [className])}
             >
                 <Input
-                    data-testid='AddCommentForm.Input'
                     className={cls.input}
                     placeholder={t('Введите текст комментария')}
                     value={text}
+                    data-testid='AddCommentForm.Input'
                     onChange={onCommentTextChange}
                 />
                 <Button

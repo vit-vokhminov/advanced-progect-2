@@ -1,17 +1,18 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, Suspense } from 'react';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { CommentList } from '@/entities/Comment';
-import { useDispatch, useSelector } from 'react-redux';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Loader } from '@/shared/ui/deprecated/Loader';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { Loader } from '@/shared/ui/deprecated/Loader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 
 interface ArticleDetailsCommentsProps {
     className?: string;
@@ -24,7 +25,7 @@ export const ArticleDetailsComments = memo(
         const { t } = useTranslation();
         const comments = useSelector(getArticleComments.selectAll);
         const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-        const dispatch = useDispatch();
+        const dispatch = useAppDispatch();
 
         const onSendComment = useCallback(
             (text: string) => {

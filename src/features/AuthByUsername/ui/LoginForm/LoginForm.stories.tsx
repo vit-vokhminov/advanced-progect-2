@@ -2,8 +2,6 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import LoginForm from './LoginForm';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'features/LoginForm',
@@ -13,14 +11,13 @@ export default {
     },
 } as ComponentMeta<typeof LoginForm>;
 
-const Template: ComponentStory<typeof LoginForm> = args => (
+const Template: ComponentStory<typeof LoginForm> = (args) => (
     <LoginForm {...args} />
 );
 
 export const Primary = Template.bind({});
 Primary.args = {};
 Primary.decorators = [
-    ThemeDecorator(Theme.DARK),
     StoreDecorator({
         loginForm: { username: '123', password: 'asd' },
     }),
@@ -29,7 +26,6 @@ Primary.decorators = [
 export const withError = Template.bind({});
 withError.args = {};
 withError.decorators = [
-    ThemeDecorator(Theme.DARK),
     StoreDecorator({
         loginForm: { username: '123', password: 'asd', error: 'ERROR' },
     }),
@@ -38,7 +34,6 @@ withError.decorators = [
 export const Loading = Template.bind({});
 Loading.args = {};
 Loading.decorators = [
-    ThemeDecorator(Theme.DARK),
     StoreDecorator({
         loginForm: { isLoading: true },
     }),

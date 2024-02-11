@@ -11,7 +11,7 @@ export default {
     },
 } as ComponentMeta<typeof ArticleSortSelector>;
 
-const Template: ComponentStory<typeof ArticleSortSelector> = args => (
+const Template: ComponentStory<typeof ArticleSortSelector> = (args) => (
     <ArticleSortSelector {...args} />
 );
 

@@ -2,7 +2,7 @@
 
 ```
 npm install - устанавливаем зависимости
-npm run start:dev или npm run start:dev:vite - запуск сервера + frontend проекта в dev режиме
+npm run start:dev - запуск сервера + frontend проекта в dev режиме
 ```
 
 ----
@@ -18,13 +18,13 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 - `npm run lint:ts:fix` - Исправление ts файлов линтером
 - `npm run lint:scss` - Проверка scss файлов style линтером
 - `npm run lint:scss:fix` - Исправление scss файлов style линтером
-- `npm run test:unit` - Запуск unit тестов с jest
-- `npm run test:ui` - Запуск скриншотных тестов с loki
+- `npm run test:unit` - Хапуск unit тестов с jest
+- `npm run test:ui` - Хапуск скриншотных тестов с loki
 - `npm run test:ui:ok` - Подтверждение новых скриншотов
-- `npm run test:ui:ci` - Запускаем скриншотные тесты на основе storybook:build
+- `npm run test:ui:ci` - Запуск скриншотных тестов в CI
 - `npm run test:ui:report` - Генерация полного отчета для скриншотных тестов
 - `npm run test:ui:json` - Генерация json отчета для скриншотных тестов
-- `npm run test:ui:html` - Генерация HTML отчета для скриншотных тестов на основе test:ui:json
+- `npm run test:ui:html` - Генерация HTML отчета для скриншотных тестов
 - `npm run storybook` - запуск Storybook
 - `npm run storybook:build` - Сборка storybook билда
 - `npm run prepare` - прекоммит хуки
@@ -68,7 +68,7 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 В проекте используется eslint для проверки typescript кода и stylelint для проверки файлов со стилями.
 
 Также для строгого контроля главных архитектурных принципов
-используется собственный eslint plugin *eslint-plugin-vit-vokhminov-fsd*,
+используется собственный eslint plugin *eslint-plugin-ulbi-tv-plugin*,
 который содержит 3 правила
 1) path-checker - запрещает использовать абсолютные импорты в рамках одного модуля
 2) layer-imports - проверяет корректность использования слоев с точки зрения FSD
@@ -131,11 +131,8 @@ Clear.args = {
 
 ## Конфигурация проекта
 
-Для разработки проект содержит 2 конфига:
-1. Webpack - ./config/build
-2. vite - vite.config.ts
-
-Оба сборщика адаптированы под основные фичи приложения.
+Конфиг проекта:
+- Webpack - ./config/build
 
 Вся конфигурация хранится в /config
 - /config/babel - babel
@@ -168,7 +165,7 @@ Clear.args = {
 
 ----
 
-### Работа с feature-flags
+### Работа с feature-flag
 
 Разрешено использование feature flags только с помощью хелпера toggleFeatures
 
@@ -184,32 +181,3 @@ Clear.args = {
 который принимает 2 аргумента
 1. Название удаляемого фича-флага
 2. Состояние (on\off)
-
-----
-
-## Сущности (entities)
-
-- [Article](/src/entities/Article)
-- [Comment](/src/entities/Comment)
-- [Counter](/src/entities/Counter)
-- [Country](/src/entities/Country)
-- [Currency](/src/entities/Currency)
-- [Notification](/src/entities/Notification)
-- [Profile](/src/entities/Profile)
-- [Rating](/src/entities/Rating)
-- [User](/src/entities/User)
-
-## Фичи (features)
-
-- [addCommentForm](/src/features/AddCommentForm)
-- [articleEditForm](/src/features/ArticleEditForm)
-- [articleRating](/src/features/ArticleRating)
-- [articleRecommendationsList](/src/features/ArticleRecommendationsList)
-- [AuthByUsername](/src/features/AuthByUsername)
-- [avatarDropdown](/src/features/AvatarDropdown)
-- [EditableProfileCard](/src/features/EditableProfileCard)
-- [LangSwitcher](/src/features/LangSwitcher)
-- [notificationButton](/src/features/NotificationButton)
-- [profileRating](/src/features/ProfileRating)
-- [ThemeSwitcher](/src/features/ThemeSwitcher)
-- [UI](/src/features/UI)

@@ -13,7 +13,7 @@ describe('app/router/AppRouter', () => {
         componentRender(<AppRouter />, {
             route: getRouteAbout(),
         });
-        // findByTestId асинхронный метод
+
         const page = await screen.findByTestId('AboutPage');
         expect(page).toBeInTheDocument();
     });

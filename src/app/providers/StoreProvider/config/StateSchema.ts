@@ -1,6 +1,3 @@
-import { CounterSchema } from '@/entities/Counter';
-import { UserSchema } from '@/entities/User';
-import { LoginSchema } from '@/features/AuthByUsername';
 import {
     AnyAction,
     EnhancedStore,
@@ -9,11 +6,14 @@ import {
 } from '@reduxjs/toolkit';
 import { CombinedState } from 'redux';
 import { AxiosInstance } from 'axios';
+import { LoginSchema } from '@/features/AuthByUsername';
+import { UserSchema } from '@/entities/User';
+import { CounterSchema } from '@/entities/Counter';
 import { ArticleDetailsSchema } from '@/entities/Article';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from '@/features/AddCommentForm';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
-import { UISchema } from '@/features/ScrollSave';
+import { UISchema } from '@/features/UI';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { ProfileSchema } from '@/features/EditableProfileCard';
 
@@ -33,8 +33,9 @@ export interface StateSchema {
 }
 
 export type StateSchemaKey = keyof StateSchema;
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
 
-export interface reducerManager {
+export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
     reduce: (
         state: StateSchema,
@@ -42,11 +43,13 @@ export interface reducerManager {
     ) => CombinedState<StateSchema>;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
+    // true - вмонтирован, false - демонтирован
+    getMountedReducers: () => MountedReducers;
 }
 
 // EnhancedStore это стандартный тип который возвращается при создании стора
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
-    reducerManager: reducerManager;
+    reducerManager: ReducerManager;
 }
 
 export interface ThunkExtraArg {

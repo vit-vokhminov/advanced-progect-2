@@ -1,26 +1,20 @@
-import { Button } from '@/shared/ui/Button';
-//import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-//import { counterActions } from '../model/slice/counterSlice';
-//import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
-import { useSelectorCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
+import { Button } from '@/shared/ui/deprecated/Button';
 import { useCounterActions } from '../model/slice/counterSlice';
+import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 
 export const Counter = () => {
-    //const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const counterValue = useCounterValue();
     const { t } = useTranslation();
-
-    //const counterValue = useSelector(getCounterValue);
-    const counterValue = useSelectorCounterValue();
     const { decrement, increment, add } = useCounterActions();
 
-    const handleIncrement = () => {
-        //dispatch(counterActions.increment());
+    const handleInc = () => {
         increment();
     };
 
-    const handleDecrement = () => {
-        //dispatch(counterActions.decrement());
+    const handleDec = () => {
         decrement();
     };
 
@@ -31,11 +25,11 @@ export const Counter = () => {
     return (
         <div>
             <h1 data-testid='value-title'>{counterValue}</h1>
-            <Button data-testid='decrement-btn' onClick={handleDecrement}>
-                {t('decrement')}
-            </Button>
-            <Button onClick={handleIncrement} data-testid='increment-btn'>
+            <Button onClick={handleInc} data-testid='increment-btn'>
                 {t('increment')}
+            </Button>
+            <Button data-testid='decrement-btn' onClick={handleDec}>
+                {t('decrement')}
             </Button>
             <Button onClick={handleAddFive} data-testid='increment-btn5'>
                 {t('add5')}

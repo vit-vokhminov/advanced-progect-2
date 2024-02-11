@@ -2,7 +2,7 @@
 
 ```
 npm install - устанавливаем зависимости
-npm run start:dev или npm run start:dev:vite - запуск сервера + frontend проекта в dev режиме
+npm run start:dev - запуск сервера + frontend проекта в dev режиме
 ```
 
 ----
@@ -21,10 +21,10 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 - `npm run test:unit` - Запуск unit тестов с jest
 - `npm run test:ui` - Запуск скриншотных тестов с loki
 - `npm run test:ui:ok` - Подтверждение новых скриншотов
-- `npm run test:ui:ci` - Запускаем скриншотные тесты на основе storybook:build
+- `npm run test:ui:ci` - Запуск скриншотных тестов в CI
 - `npm run test:ui:report` - Генерация полного отчета для скриншотных тестов
 - `npm run test:ui:json` - Генерация json отчета для скриншотных тестов
-- `npm run test:ui:html` - Генерация HTML отчета для скриншотных тестов на основе test:ui:json
+- `npm run test:ui:html` - Генерация HTML отчета для скриншотных тестов
 - `npm run storybook` - запуск Storybook
 - `npm run storybook:build` - Сборка storybook билда
 - `npm run prepare` - прекоммит хуки
@@ -131,11 +131,8 @@ Clear.args = {
 
 ## Конфигурация проекта
 
-Для разработки проект содержит 2 конфига:
-1. Webpack - ./config/build
-2. vite - vite.config.ts
-
-Оба сборщика адаптированы под основные фичи приложения.
+Конфиг проекта:
+- Webpack - ./config/build
 
 Вся конфигурация хранится в /config
 - /config/babel - babel
@@ -168,30 +165,19 @@ Clear.args = {
 
 ----
 
+### Работа с feature-flag
 
-## Сущности (entities)
+Разрешено использование feature flags только с помощью хелпера toggleFeatures
 
-- [Article](/src/entities/Article)
-- [Comment](/src/entities/Comment)
-- [Counter](/src/entities/Counter)
-- [Country](/src/entities/Country)
-- [Currency](/src/entities/Currency)
-- [Notification](/src/entities/Notification)
-- [Profile](/src/entities/Profile)
-- [Rating](/src/entities/Rating)
-- [User](/src/entities/User)
+в него передается объект с опциями 
 
-## Фичи (features)
+{
+   name: название фича-флага, 
+   on: функция, которая отработает после Включения фичи 
+   of: функция, которая отработает после ВЫключения фичи
+}
 
-- [addCommentForm](/src/features/AddCommentForm)
-- [articleEditForm](/src/features/ArticleEditForm)
-- [articleRating](/src/features/ArticleRating)
-- [articleRecommendationsList](/src/features/ArticleRecommendationsList)
-- [AuthByUsername](/src/features/AuthByUsername)
-- [avatarDropdown](/src/features/AvatarDropdown)
-- [EditableProfileCard](/src/features/EditableProfileCard)
-- [LangSwitcher](/src/features/LangSwitcher)
-- [notificationButton](/src/features/NotificationButton)
-- [profileRating](/src/features/ProfileRating)
-- [ThemeSwitcher](/src/features/ThemeSwitcher)
-- [UI](/src/features/UI)
+Для автоматического удаления фичи использовать скрипт remove-feature.ts,
+который принимает 2 аргумента
+1. Название удаляемого фича-флага
+2. Состояние (on\off)

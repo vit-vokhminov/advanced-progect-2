@@ -1,10 +1,9 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import { ArticleView } from '../../model/consts/articleConsts';
 import { ArticleList } from './ArticleList';
 import { Article } from '../../model/types/article';
-import { ArticleView } from '../../model/consts/articleConsts';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'entities/Article/ArticleList',
@@ -14,7 +13,7 @@ export default {
     },
 } as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = args => (
+const Template: ComponentStory<typeof ArticleList> = (args) => (
     <ArticleList {...args} />
 );
 
@@ -99,7 +98,6 @@ LoadingBig.args = {
     isLoading: true,
     view: ArticleView.BIG,
 };
-LoadingBig.decorators = [ThemeDecorator(Theme.NORMAL)];
 
 export const LoadingSmall = Template.bind({});
 LoadingSmall.args = {
@@ -107,7 +105,6 @@ LoadingSmall.args = {
     isLoading: true,
     view: ArticleView.SMALL,
 };
-LoadingSmall.decorators = [ThemeDecorator(Theme.NORMAL)];
 
 export const ListSmall = Template.bind({});
 ListSmall.args = {
@@ -118,7 +115,6 @@ ListSmall.args = {
     isLoading: false,
     view: ArticleView.SMALL,
 };
-ListSmall.decorators = [ThemeDecorator(Theme.NORMAL)];
 
 export const ListBig = Template.bind({});
 ListBig.args = {
@@ -129,4 +125,3 @@ ListBig.args = {
     isLoading: false,
     view: ArticleView.BIG,
 };
-ListBig.decorators = [ThemeDecorator(Theme.NORMAL)];

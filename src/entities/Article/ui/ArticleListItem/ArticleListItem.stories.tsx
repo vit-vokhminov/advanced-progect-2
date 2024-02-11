@@ -1,10 +1,9 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import { ArticleView } from '../../model/consts/articleConsts';
 import { ArticleListItem } from './ArticleListItem';
 import { Article } from '../../model/types/article';
-import { ArticleView } from '../../model/consts/articleConsts';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'entities/Article/ArticleListItem',
@@ -14,7 +13,7 @@ export default {
     },
 } as ComponentMeta<typeof ArticleListItem>;
 
-const Template: ComponentStory<typeof ArticleListItem> = args => (
+const Template: ComponentStory<typeof ArticleListItem> = (args) => (
     <ArticleListItem {...args} />
 );
 
@@ -98,11 +97,9 @@ Big.args = {
     view: ArticleView.BIG,
     article,
 };
-Big.decorators = [ThemeDecorator(Theme.NORMAL)];
 
 export const Small = Template.bind({});
 Small.args = {
     view: ArticleView.SMALL,
     article,
 };
-Big.decorators = [ThemeDecorator(Theme.NORMAL)];

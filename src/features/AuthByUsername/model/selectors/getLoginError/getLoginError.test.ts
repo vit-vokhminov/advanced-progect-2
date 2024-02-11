@@ -1,7 +1,7 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { getLoginError } from './getLoginError';
 
-describe('getLoginError', () => {
+describe('getLoginError.test', () => {
     test('получить error из store', () => {
         const state: DeepPartial<StateSchema> = {
             loginForm: {

@@ -6,9 +6,26 @@ import { buildBabelLoader } from './loaders/buildBabelLoader';
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const { isDev } = options;
 
+    // https://react-svgr.com/docs/options/
     const svgLoader = {
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        use: [{
+            loader: '@svgr/webpack',
+            options: {
+                icon: true, // дефолтный размер 1em
+                svgoConfig: {
+                    plugins: [
+                        {
+                            name: 'convertColors',
+                            params: {
+                                // замена зашитого цвета fill в svg на currentColor
+                                currentColor: true,
+                            }
+                        }
+                    ]
+                }
+            }
+        }],
     };
 
     const fileLoader = {

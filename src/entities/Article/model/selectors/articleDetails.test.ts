@@ -5,7 +5,7 @@ import {
     getArticleDetailsIsLoading,
 } from './articleDetails';
 
-describe('articleDetails', () => {
+describe('articleDetails.test', () => {
     test('should return data', () => {
         const data = {
             id: '1',

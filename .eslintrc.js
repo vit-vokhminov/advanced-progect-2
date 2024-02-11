@@ -102,6 +102,7 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         // запретить нижние подчёркивания
         'no-underscore-dangle': 'off',
+        'react/jsx-wrap-multilines': 'off',
         'max-len': [
             'error',
             {
@@ -129,10 +130,17 @@ module.exports = {
                     'border',
                     'direction',
                     'gap',
+                    'feature',
+                    'color',
+                    'variant',
+                    'border',
+                    'size',
+                    'wrap',
                 ],
             },
         ],
         'import/order': 'off',
+        'react/jsx-curly-newline': 'off',
         'object-curly-newline': 'off',
         'arrow-body-style': 'off',
         'react/jsx-no-useless-fragment': 'off',
@@ -180,6 +188,7 @@ module.exports = {
                 ],
             },
         ],
+        'react/no-unstable-nested-components': 'warn'
     },
     globals: {
         __IS_DEV__: true,

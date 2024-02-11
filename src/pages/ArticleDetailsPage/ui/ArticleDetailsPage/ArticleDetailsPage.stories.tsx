@@ -1,21 +1,19 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { Article, ArticleBlockType, ArticleType } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'pages/ArticleDetailsPage',
+    title: 'pages/ArticleDetailsPage/ArticleDetailsPage',
     component: ArticleDetailsPage,
-    //decorators: [withRouter],
     argTypes: {
         backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = args => (
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
     <ArticleDetailsPage {...args} />
 );
 
@@ -26,12 +24,10 @@ const article: Article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
-    userId: '1',
     type: [ArticleType.IT],
     user: {
         id: '1',
-        username: 'vit',
-        avatar: 'https://i.ebayimg.com/images/g/-usAAOSw3JhdXE9u/s-l500.jpg',
+        username: 'Ulbi tv',
     },
     blocks: [
         {
@@ -63,9 +59,7 @@ const article: Article = {
 
 export const Normal = Template.bind({});
 Normal.args = {};
-
 Normal.decorators = [
-    ThemeDecorator(Theme.NORMAL),
     StoreDecorator({
         articleDetails: {
             data: article,

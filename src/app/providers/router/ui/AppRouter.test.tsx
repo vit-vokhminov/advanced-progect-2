@@ -13,7 +13,7 @@ describe('app/router/AppRouter', () => {
         componentRender(<AppRouter />, {
             route: getRouteAbout(),
         });
-        // findByTestId асинхронный метод
+
         const page = await screen.findByTestId('AboutPage');
         expect(page).toBeInTheDocument();
     });
@@ -36,14 +36,11 @@ describe('app/router/AppRouter', () => {
         expect(page).toBeInTheDocument();
     });
 
-    test('Доступ к закрытой странице для авторизованного пользователя', async () => {
+    test('Доступ к закрытой страницы для авторизованного пользователя', async () => {
         componentRender(<AppRouter />, {
             route: getRouteProfile('1'),
             initialState: {
-                user: {
-                    _inited: true,
-                    authData: {},
-                },
+                user: { _inited: true, authData: {} },
             },
         });
 

@@ -1,18 +1,17 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { CommentList } from './CommentList';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'entities/CommentList',
+    title: 'entities/Comment/CommentList',
     component: CommentList,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof CommentList>;
 
-const Template: ComponentStory<typeof CommentList> = args => (
+const Template: ComponentStory<typeof CommentList> = (args) => (
     <CommentList {...args} />
 );
 
@@ -31,11 +30,9 @@ Normal.args = {
         },
     ],
 };
-Normal.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Loading = Template.bind({});
 Loading.args = {
     comments: [],
     isLoading: true,
 };
-Loading.decorators = [ThemeDecorator(Theme.DARK)];
